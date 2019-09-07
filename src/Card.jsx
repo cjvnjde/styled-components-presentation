@@ -2,19 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Content = styled.div`
+  font-family: 'Roboto';
   font-size: 1.5em;
   text-align: center;
 `;
 
 const Title = styled(Content)`
   color: palevioletred;
+  margin-bottom: 1em;
 `;
 
 const Card = styled.div`
-  background-color: #d1d1d1;
+  background-color: #fff;
+  border: 1px solid #255c27;
   border-radius: 1em;
   font-weight: 600;
-  padding: 0.5em 0.5em 3em;
+  padding: 1em 1em 3em;
   width: 500px;
 `;
 
