@@ -5,6 +5,7 @@ import Card from './Card';
 
 const GlobalStyle = createGlobalStyle`
   body {
+    font-family: 'Roboto';
     background-color: #cffffa;
     margin: 0;
   }
