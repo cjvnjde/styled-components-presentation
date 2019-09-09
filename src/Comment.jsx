@@ -27,8 +27,8 @@ const CaptionDate = styled.div`
 `;
 
 const CommentText = styled.div`
-  background-color: #f2fbff;
-  border: 1px solid #cfcfcf;
+  background-color: ${props => props.theme.colors.commentTextBackground};
+  border: 1px solid ${props => props.theme.colors.commentTextBorder};
   padding: 16px 17px 14px 20px;
   margin-top: 11px;
   line-height: 18px;
@@ -38,7 +38,7 @@ const CommentText = styled.div`
     content: "";
     width: 0;
     height: 0;
-    border-bottom: 10px solid #cfcfcf;
+    border-bottom: 10px solid ${props => props.theme.colors.commentTextBorder};
     border-right: 10px solid transparent;
     position: absolute;
     left: 22px;
@@ -49,7 +49,7 @@ const CommentText = styled.div`
     content: "";
     width: 0;
     height: 0;
-    border-bottom: 9px solid #f2fbff;
+    border-bottom: 9px solid ${props => props.theme.colors.commentTextBackground};
     border-right: 9px solid transparent;
     position: absolute;
     left: 23px;

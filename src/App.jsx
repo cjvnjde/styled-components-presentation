@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import Comment from './Comment';
 import CommentForm from './CommentForm';
 import AnimationCat from './AnimationCat';
 
+import { mainTheme } from './themes';
+
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Roboto';
-    background: url("/catGay.png");
+    background: ${props =>
+      `${props.theme.body.backgroundColor}
+      url("${props.theme.body.backgroundImageUrl}")`};
   }
 `;
 
@@ -44,26 +48,29 @@ export default () => {
   };
 
   return (
-    <>
-      <GlobalStyle />
-      <Title>
-        Styled Title
-      </Title>
-      <Content>
-        Lorem ipsum dolor sit amet,
-        consectetur adipisicing elit.
-        Optio quam, architecto quae dolores
-        nesciunt nihil hic eos voluptas, nemo
-        error alias quisquam, perferendis animi
-        suscipit dolore sapiente. Nemo, ab odit.
-      </Content>
-      <CommentForm 
-        sendData={addComment}
-      />
-      <CommentsList>
-        {commentsList}
-      </CommentsList>
-      <AnimationCat />
-    </>
+    <ThemeProvider theme={mainTheme}>
+      <>
+        <GlobalStyle />
+        <Title>
+          Styled Title
+        </Title>
+        <Content>
+          Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit.
+          Optio quam, architecto quae dolores
+          nesciunt nihil hic eos voluptas, nemo
+          error alias quisquam, perferendis animi
+          suscipit dolore sapiente. Nemo, ab odit.
+        </Content>
+        <CommentForm 
+          sendData={addComment}
+        />
+        <CommentsList>
+          {commentsList}
+        </CommentsList>
+        <AnimationCat />
+      </>
+    </ThemeProvider>
   );
 }
+

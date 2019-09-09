@@ -19,7 +19,7 @@ const Form = styled.div`
   flex-direction: column;
   padding: 30px 20px 10px;
   margin: 10px 0;
-  background-color: #f2f2f2;
+  background-color: ${props => props.theme.colors.formBackground};
 `;
 
 const TextInput = styled(customInput)`
@@ -27,7 +27,7 @@ const TextInput = styled(customInput)`
   height: 60px;
   resize: none;
   border-radius: 2px;
-  border: 1px solid #a9a9a9;
+  border: 1px solid ${props => props.theme.colors.textInputBorder};
 `;
 
 const NameInput = styled.input`
@@ -35,28 +35,28 @@ const NameInput = styled.input`
   height: 20px;
   resize: none;
   border-radius: 2px;
-  border: 1px solid #a9a9a9;
+  border: 1px solid ${props => props.theme.colors.textInputBorder};
   margin-bottom: 10px;
 `;
 
 const Button = styled.button`
-  background: ${props => props.primary ? "#fdd639" : "#fff"};
-  color: ${props => props.primary ? "#fff" : "#fdd639"};
+  background: ${props => props.primary ? props.theme.colors.main : "#fff"};
+  color: ${props => props.primary ? "#fff" : props.theme.colors.main};
 
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid #fdd639;
+  border: 2px solid ${props => props.theme.colors.main};
   border-radius: 3px;
 
   :hover {
-    background-color: ${props => props.primary ? "#ffcc00" : "#eee"};
-    color: ${props => props.primary ? "#eee" : "#ffcc00"};
+    background-color: ${props => props.primary ? props.theme.colors.mainActive : "#eee"};
+    color: ${props => props.primary ? "#eee" : props.theme.colors.mainActive};
   }
 
   :active {
-    background-color: ${props => props.primary ? "#ffde5b" : "#eee"};
-    color: ${props => props.primary ? "#eee" : "#ffde5b"};
+    background-color: ${props => props.primary ? props.theme.colors.mainHover : "#eee"};
+    color: ${props => props.primary ? "#eee" : props.theme.colors.mainHover};
   }
 `;
 
