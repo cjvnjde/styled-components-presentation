@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import Comment from './Comment';
 import CommentForm from './CommentForm';
 import AnimationCat from './AnimationCat';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Roboto';
+    background: url("/catGay.png");
+  }
+`;
 
 const Content = styled.div`
   font-size: 1.5em;
@@ -38,6 +45,7 @@ export default () => {
 
   return (
     <>
+      <GlobalStyle />
       <Title>
         Styled Title
       </Title>

@@ -15,7 +15,7 @@ const RotatingCat = styled.img`
   animation: ${rotate} 2s linear infinite;
   position: absolute;
   top: 10px;
-  right: 20px;
+  right: 30px;
 `;
 
 export default () => (
