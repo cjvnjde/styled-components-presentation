@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Comment from './Comment';
 import CommentForm from './CommentForm';
+import AnimationCat from './AnimationCat';
 
 const Content = styled.div`
   font-size: 1.5em;
@@ -54,6 +55,7 @@ export default () => {
       <CommentsList>
         {commentsList}
       </CommentsList>
+      <AnimationCat />
     </>
   );
 }
