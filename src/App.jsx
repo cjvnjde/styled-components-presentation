@@ -5,7 +5,11 @@ import Comment from './Comment';
 import CommentForm from './CommentForm';
 import AnimationCat from './AnimationCat';
 
-import { mainTheme } from './themes';
+import {
+  mainTheme,
+  secondTheme,
+  thirdTheme,
+} from './themes';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -48,7 +52,7 @@ export default () => {
   };
 
   return (
-    <ThemeProvider theme={mainTheme}>
+    <ThemeProvider theme={thirdTheme}>
       <>
         <GlobalStyle />
         <Title>
