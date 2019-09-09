@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+const customInput = ({ className, value, onChange}) => {
+  // some code
+  return (
+    <textarea
+      className={className}
+      value={value}
+      onChange={onChange}
+    />
+  )
+}
+
 const Form = styled.div`
   width: calc(100% - 40px);
   display: flex;
@@ -11,7 +22,7 @@ const Form = styled.div`
   background-color: #f2f2f2;
 `;
 
-const TextInput = styled.textarea`
+const TextInput = styled(customInput)`
   width: 100%;
   height: 60px;
   resize: none;
