@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 
 import Comment from './Comment';
 import CommentForm from './CommentForm';
+import AnimationCat from './AnimationCat';
 
 import {
   mainTheme,
@@ -48,6 +49,7 @@ export default () => {
         <Title>
           Styled Title
         </Title>
+        <AnimationCat /> 
         <Content>
           Lorem ipsum dolor sit amet,
           consectetur adipisicing elit.

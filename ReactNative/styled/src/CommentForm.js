@@ -25,38 +25,33 @@ const Form = styled.View`
 
 const TextInputS = styled(customInput)`
   width: 100%;
-  height: 60px;
+  height: 70px;
   border-radius: 2px;
   border: 1px solid ${props => props.theme.colors.textInputBorder};
 `;
 
 const NameInput = styled.TextInput`
   width: 100%;
-  height: 20px;
+  height: 50px;
   border-radius: 2px;
   border: 1px solid ${props => props.theme.colors.textInputBorder};
   margin-bottom: 10px;
 `;
 
-const Button = styled.Button`
-  background: ${props => props.primary ? props.theme.colors.main : "#fff"};
+const Button = styled.TouchableHighlight`
+  background-color: ${props => props.primary ? props.theme.colors.main : "#fff"};
   color: ${props => props.primary ? "#fff" : props.theme.colors.main};
 
   margin: 18px;
   padding: 4px 18px;
   border: 2px solid ${props => props.theme.colors.main};
   border-radius: 3px;
-
-  :hover {
-    background-color: ${props => props.primary ? props.theme.colors.mainActive : "#eee"};
-    color: ${props => props.primary ? "#eee" : props.theme.colors.mainActive};
-  }
-
-  :active {
-    background-color: ${props => props.primary ? props.theme.colors.mainHover : "#eee"};
-    color: ${props => props.primary ? "#eee" : props.theme.colors.mainHover};
-  }
 `;
+
+const Label = styled.Text`
+  align-self: center;
+  padding: 10px;
+`
 
 const ButtonContainer = styled.View`
   display: flex;
@@ -105,14 +100,16 @@ export default ({ sendData }) => {
       />
       <ButtonContainer>
         <Button
-        title="Очистить"
+        underlayColor={'#fff'}
         onPress={() => {
           setText('');
           setName('');
-        }} />
+        }}>
+          <Label>Очистить</Label>
+        </Button>
         <Button
+          underlayColor={'#fff'}
           primary
-          title="Отправить"
           onPress={() => {
             if (name) {
               sendData({
@@ -124,7 +121,9 @@ export default ({ sendData }) => {
             setText('');
             setName('');
           }}
-        />
+        >
+          <Label>Отправить</Label>
+        </Button>
       </ButtonContainer>
     </Form>
   );
