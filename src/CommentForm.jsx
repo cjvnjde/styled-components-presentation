@@ -28,11 +28,14 @@ const NameInput = styled.input`
   margin-bottom: 10px;
 `;
 
-const Button = styled.button`
+const Button = styled.button.attrs(props => ({
+  type: 'button',
+  size: props.primary ? '1' : '2',
+}))`
   background: ${props => props.primary ? "#fdd639" : "#fff"};
   color: ${props => props.primary ? "#fff" : "#fdd639"};
 
-  font-size: 1em;
+  font-size: ${props => props.size}em;
   margin: 1em;
   padding: 0.25em 1em;
   border: 2px solid #fdd639;
